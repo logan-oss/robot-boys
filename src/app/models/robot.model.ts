@@ -6,8 +6,9 @@ export class Robot {
     constructorName: string;
     serviceType: string;
     creator: string;
-    releaseDate: string;
+    releaseDate: Date;
     price: string;
+    image: string;
 
     constructor() {
         this.name = '';
@@ -15,7 +16,8 @@ export class Robot {
         this.constructorName = '';
         this.serviceType = '';
         this.creator = '';
-        this.releaseDate = '';
+        this.releaseDate = new Date();
         this.price = '';
+        this.image = '';
     }
 }

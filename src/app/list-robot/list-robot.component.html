@@ -1,4 +1,14 @@
 <ul>
-    <input *ngFor="let robot of robots; let i = index"
-    value="robot.releaseDate">
+    <app-robot class="pt-5"  *ngFor="let robot of robots; let i = index" 
+        [robotAffiche] = "robot.image"
+        [robotTitre] = "robot.name"
+        [constructorName] = "robot.constructorName"
+        [creator] = "robot.creator"
+        [robotDescription] = "robot.description"
+        [robotPrice] = "robot.price"
+        [serviceType] = "robot.serviceType"
+        [robotReleaseDate] = "robot.releaseDate"
+        [id] = "robot.id"
+    >
+    </app-robot>
 </ul>

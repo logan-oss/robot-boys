@@ -13,7 +13,7 @@
         <label> Image du robot </label> <br>
         <input type="text" class="form-control" [(ngModel)]="robot.image" (change)="setImage()" placeholder="Un lien est attendu">
         <label class="mt-2"> Description </label>
-        <textarea class="form-control" cols="30" rows="8"></textarea>
+        <textarea class="form-control" [(ngModel)]="robot.description" cols="30" rows="8"></textarea>
     </div>
     <div class="col-6 text-center">
         <img id="imageView" src="https://www.adenine-rh.com/wp-content/themes/consultix/images/no-image-found-360x250.png" style="width: 500px; height: 300px;">
@@ -22,7 +22,7 @@
 <div class="row mt-4">
     <div class="col-6">
         <label> Créateur </label> <br>
-        <input type="text" [(ngModel)]="robot.creator" class="form-control">
+        <input type="text" id="txt_creator" (keyup)="onlyLetter()" [(ngModel)]="robot.creator" class="form-control">
     </div>
     <div class="col-6">
         <label> Nom du constructeur </label> <br>
@@ -37,13 +37,13 @@
     </div>
     <div class="col-6">
         <label> Date de sortie </label> <br>
-        <input type="date" [(ngModel)]="robot.releaseDate" class="form-control">
+        <input id="date" type="date" [(ngModel)]="robot.releaseDate" class="form-control">
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12 text-center">
         <div class="submit">
-            <button class="btn btn-outline-success" (click)="add()">Valider le formulaire</button>
+            <a class="btn btn-outline-success" (click)="modif()" routerLink="robots">Valider le formulaire</a>
         </div>  
     </div>
 </div>
